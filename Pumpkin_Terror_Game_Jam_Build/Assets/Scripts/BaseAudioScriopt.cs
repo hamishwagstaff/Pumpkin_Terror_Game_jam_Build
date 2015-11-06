@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BaseAudioScriopt : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class BaseAudioScriopt : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && GameObject.FindObjectWithTag("Player").GetComponent<PlayerScript>().points != 0)
         {
             audio.Play();
         }
